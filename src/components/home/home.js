@@ -22,13 +22,13 @@ function Home() {
 
       <div>
         <Link to="/register" style={linkStyle}>
-          <button class="button-52" role="button">
+          <button class="button-52">
             Register
           </button>
         </Link>
 
         <Link to="/login" style={linkStyle}>
-          <button class="button-52" role="button">
+          <button class="button-52">
             Login
           </button>
         </Link>
