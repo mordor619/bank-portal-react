@@ -5,6 +5,7 @@ import RegistrationForm from "./components/register/registrationForm";
 import Home from "./components/home/home";
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/loading/loading";
+import Dashboard from "./components/dashboard/dashboard";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -33,6 +34,8 @@ function App() {
               </>
             }
           />
+
+        <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       )}
     </div>
