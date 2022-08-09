@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/register/header";
 import RegistrationForm from "./components/register/registrationForm";
+import LoginForm from "./components/login/loginForm";
+import Header1 from "./components/login/loginheader";
 import Home from "./components/home/home";
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/loading/loading";
@@ -27,13 +29,26 @@ function App() {
 
           <Route
             path="/register"
+            
             element={
               <>
                 <Header />
                 <RegistrationForm />
+                
               </>
             }
           />
+          <Route
+            path="/login"
+            
+            element={
+              <>
+                <Header1 />
+                <LoginForm />
+              </>
+            }
+          />
+          
 
         <Route path="/dashboard" element={<Dashboard />} />
         </Routes>

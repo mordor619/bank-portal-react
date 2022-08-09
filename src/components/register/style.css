@@ -34,3 +34,11 @@ body{
     text-align: center;
 }
 
+div error{
+    text-align: center;
+    color: red;
+    font-style: italic;
+    margin-left: 40%;
+
+}
+
