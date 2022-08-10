@@ -157,15 +157,18 @@ function RegistrationForm(props) {
                   <input className="form__input" type="password" value={password} onChange = {(e) => handleInputChange(e)} id="password" placeholder="Password"
                   {...register("password", {
                     required: true,
-                    minLength: 5,
+                    minLength: 8,
                     maxLength: 20,
+                    pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/,
                   })}/>
                   
               </div>
               <error>
                   {errors.password?.type === "required" && "Password is required"}
+                  {errors.password?.type === "pattern" &&
+              "Entered password is in wrong format"}
             {errors.password?.type === "minLength" &&
-              "Entered password is less than 5 characters"}
+              "Entered password is less than 8 characters"}
             {errors.password?.type === "maxLength" &&
               "Entered password is more than 20 characters"}
           </error>
@@ -175,17 +178,20 @@ function RegistrationForm(props) {
                   <input className="form__input" type="password" value={confirmPassword} onChange = {(e) => handleInputChange(e)} id="confirmPassword" placeholder="Confirm Password"
                   {...register("confirmPassword", {
                     required: true,
-                    minLength: 5,
+                    minLength: 8,
                     maxLength: 20,
+                    pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/,
                   })}/>
                   
               </div>
               <div>
               <error>
                   {errors.confirmPassword?.type === "required" && "Confirm Password is required"}
-            {errors.ConfirmPassword?.type === "minLength" &&
-              "Entered password is less than 5 characters"}
-            {errors.ConfirmPassword?.type === "maxLength" &&
+                  {errors.confirmPassword?.type === "pattern" &&
+              "Entered password is in wrong format"}
+            {errors.confirmPassword?.type === "minLength" &&
+              "Entered password is less than 8 characters"}
+            {errors.confirmPassword?.type === "maxLength" &&
               "Entered password is more than 20 characters"}
               </error></div>
 

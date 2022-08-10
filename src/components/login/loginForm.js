@@ -82,12 +82,15 @@ function LoginForm(props){
                     required: true,
                     minLength: 5,
                     maxLength: 20,
+                    pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/,
                   })}/>
                   
               </div>
               <div>
               <error>
                   {errors.password?.type === "required" && "Password is required"}
+                  {errors.password?.type === "pattern" &&
+              "Entered password is in wrong format"}
             {errors.password?.type === "minLength" &&
               "Entered password is less than 5 characters"}
             {errors.password?.type === "maxLength" &&
