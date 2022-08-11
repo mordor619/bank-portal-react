@@ -44,7 +44,11 @@ function LoginForm(props){
 
                     if (result.data.status === 200)  {
                         // transfer to dashboard page
+                        localStorage.setItem('isLoggedIn', true);
+                        localStorage.setItem('userAccountNumber', data.accountNumber);
+
                         alert(result.data.message);
+
                         return navigate("/dashboard");
                     }
                     else 

@@ -1,7 +1,7 @@
 import React from "react";
 import NavbarLoggedIn from "../NavbarLoggedIn";
 
-function Dashboard() {
+function FixedDeposit() {
   return (
     <div>
       <NavbarLoggedIn />
@@ -10,12 +10,12 @@ function Dashboard() {
       <br></br>
 
       {/* change from here */}
-        <h3>dashboard page Under construction</h3>
+        <h3>fixed deposit page Under construction</h3>
       
     </div>
   );
 }
 
-export default Dashboard;
+export default FixedDeposit;
 
 //end

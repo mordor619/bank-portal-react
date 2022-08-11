@@ -50,7 +50,7 @@ function RegistrationForm(props) {
 
         // console.log(name,emailid,phoneNumber,address,dob,password,confirmPassword);
 
-        if(password === confirmPassword){
+        if(data.password === data.confirmPassword){
             //const [data, setData] = useState({ accHolderName: '', email: '', phone: '', address: '', date: '', password: ''})  
 
             const apiUrl = "https://localhost:44340/api/Register/Signup";

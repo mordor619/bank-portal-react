@@ -8,12 +8,18 @@ import Home from "./components/home/home";
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/loading/loading";
 import Dashboard from "./components/dashboard/dashboard";
+import Transaction from "./components/transaction/transaction";
+import Logout from "./components/logout/logout";
+import Profile from "./components/profile/profile";
+import Transfer from "./components/transfer/transfer";
+import FixedDeposit from "./components/fixed-deposit/fixeddeposit";
 
 function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
+
     setTimeout(() => {
       setLoading(false);
     }, 4000); //loading for 4 seconds
@@ -49,8 +55,18 @@ function App() {
             }
           />
           
+          <Route path="/dashboard" element={<Dashboard />} />
 
-        <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/transaction" element={<Transaction />} />
+
+          <Route path="/logout" element={<Logout />} />
+
+          <Route path="/profile" element={<Profile />} />
+
+          <Route path="/transfer" element={<Transfer />} />
+
+          <Route path="/fixeddeposit" element={<FixedDeposit />} />
+        
         </Routes>
       )}
     </div>
