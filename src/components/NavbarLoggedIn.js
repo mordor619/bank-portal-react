@@ -27,7 +27,7 @@ const NavbarLoggedIn = () => {
       }
     ],
     logo: {
-      text: 'EazyBank',
+      text: 'Banks-R-Us.',
       link: '/dashboard'
     },
     style: {

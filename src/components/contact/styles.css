@@ -1,0 +1,53 @@
+#contactPageDiv {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+.bgTitle {
+  height: 475px;
+  width: 600px;
+  margin-left: 120px;
+  border-radius: 10px;
+}
+
+.contactComp{
+  height: 475px;
+  width: 370px;
+  margin-left: 50px;
+  background: black;
+  border-radius: 10px;
+  color: white;
+  text-align: left;
+}
+
+.headCont{
+    font-family: 'Bahnschrift SemiBold';
+    margin-left: 50px;
+}
+
+.subHeadCont{
+    color: darkgray;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subTextCont{
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.linkSocial, .linkSocial:hover, .linkSocial:focus, .linkSocial:active {
+    color: inherit;
+}
+
+
+
+
+
+

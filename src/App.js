@@ -13,6 +13,8 @@ import Logout from "./components/logout/logout";
 import Profile from "./components/profile/profile";
 import Transfer from "./components/transfer/transfer";
 import FixedDeposit from "./components/fixed-deposit/fixeddeposit";
+import About from "./components/about/about";
+import Contact from "./components/contact/contact";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -66,6 +68,10 @@ function App() {
           <Route path="/transfer" element={<Transfer />} />
 
           <Route path="/fixeddeposit" element={<FixedDeposit />} />
+
+          <Route path="/about" element={<About />} />
+
+          <Route path="/contact" element={<Contact />} />
         
         </Routes>
       )}

@@ -1,9 +1,71 @@
 /* CSS */
+#homePageDiv{
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  z-index: 1;
+}
+
+#homeText{
+  font-weight: bold;
+  font-size: 60px;
+  font-family: 'Allerta Stencil';
+}
+
+#textDiv2{
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 60px;
+  font-family: 'Papyrus';
+}
+
+#textDiv3{
+  font-weight: bold;
+  margin-left: 300px;
+  font-size: 15px;
+  font-family: 'Papyrus';
+}
+
+/* up arrow anim */
+
+.arrow1 {
+  animation: slide1 1s ease-in-out infinite;
+  margin-left: 9px;
+}
+
+@keyframes slide1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+
+/* up arrow anim ends */
+
+.imgHome{
+  align-items: center;
+  height: 350px;
+  width: 400px;
+  margin-left: 50px;
+  transform: rotate(30deg);
+}
+
+  .imgHome:hover{
+    margin-top: 35px;
+    transform: scale(1.05);
+  }
+
+  /* login and register button anim */
+
 .button-52 {
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 700;
   letter-spacing: 1px;
   padding: 13px 20px 13px;
+  z-index: 2;
   outline: 0;
   border: 1px solid black;
   cursor: pointer;
@@ -36,3 +98,27 @@
     padding: 13px 50px 13px;
   }
 }
+
+/* login and register button anim ends */
+
+#blackComp{
+  height: 300px;
+  width: 1060px;
+  background-color: black;
+  border-radius: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#footer{
+  width: 100%;
+  box-shadow: 0 -4px 6px 1px;
+}
+
+#subFooter{
+  width: 90%;
+  padding: 10px;
+  margin-left: 60px;
+  border-radius: 5px;
+}
+

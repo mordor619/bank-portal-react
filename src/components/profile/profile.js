@@ -44,7 +44,7 @@ function Profile() {
                 <div className="jumbotron" style={{ marginTop: "30px", width: "1000px" }}>
                     <div className="gridpf">
                         <div className="c1">
-                            <img src="dashboardusericon.jpg" alt="" className="image" />
+                            <img src="profileusericon.jpg" alt="" className="image" />
                         </div>
                         <div className="c2">
                             <br></br>
