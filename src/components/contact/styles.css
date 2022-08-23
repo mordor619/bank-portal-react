@@ -46,6 +46,14 @@
     color: inherit;
 }
 
+#whiteComp{
+    height: 50px;
+    width: 120px;
+    background: white;
+    float: right;
+    border-radius: 100px 0px 0px 100px;
+}
+
 
 
 

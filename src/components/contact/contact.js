@@ -17,9 +17,11 @@ function Contact() {
 
             <br></br>
             
-
+            <span>
             <h3 className="headCont">Contacts</h3>
 
+            <div id="whiteComp"></div>
+            </span>
             
             <br></br>
 
