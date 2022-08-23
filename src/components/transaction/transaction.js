@@ -1,8 +1,42 @@
-import React from "react";
+import React, {useState, useEffect} from 'react';
 import NavbarLoggedIn from "../NavbarLoggedIn";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 import './style.scss'
 
-function Transaction() {
+function Transaction(props) {
+
+  let navigate = useNavigate();
+
+const [transactionList, setTransactionList] =useState([]);
+  const [accountNumber, setAccountNumber] = useState(null);
+    const [amount, setAmount] = useState(null);
+    const [message, setMessage] = useState(null);
+    const [date, setDate] = useState(null);
+    const [type, setType] = useState(null);
+
+ 
+  const handleTransaction  = () => {
+    
+        //https://localhost:44340/api/Transaction/GetTransactionByAccno?Accno=0088824045
+        const accountNumber=localStorage.getItem('userAccountNumber');
+        const apiUrl = "https://localhost:44340/api/Transaction/GetTransactionByAccno?Accno="+accountNumber;
+
+        // const userData = { accountNumber:accountNumber,password:password };  
+
+        axios.get(apiUrl,accountNumber)  
+            .then((result) => {  
+            // console.log(result.data);
+            setTransactionList(result.data);
+           
+            }
+            )
+
+
+}
+useEffect(()=>{
+  handleTransaction();
+})
   return (
     <div>
       <NavbarLoggedIn />
@@ -83,48 +117,32 @@ function Transaction() {
 
       
 <div class="container">
-	
-	<div class="table">
-		<div class="table-header">
-			<div class="header__item">Amount</div>
-            <div class="header__item">Message</div>
-            <div class="header__item">Date</div>
-            <div class="header__item">Type</div>			
-		</div>
-		<div class="table-content">	
-			<div class="table-row">		
-				<div class="table-data">100</div>
-				<div class="table-data">swiggy</div>
-				<div class="table-data">23/4/2021</div>
-				<div class="table-data">Debit</div>
-			</div>
-			<div class="table-row">		
-				<div class="table-data">2000</div>
-				<div class="table-data">salary</div>
-				<div class="table-data">1/5/2021</div>
-				<div class="table-data">Credit</div>
-			</div>
-            <div class="table-row">		
-				<div class="table-data">450</div>
-				<div class="table-data">card</div>
-				<div class="table-data">2/5/2021</div>
-				<div class="table-data">Debit</div>
-			</div>
-            <div class="table-row">		
-				<div class="table-data">900</div>
-				<div class="table-data">atm</div>
-				<div class="table-data">3/5/2021</div>
-				<div class="table-data">Debit</div>
-			</div>
-            <div class="table-row">		
-				<div class="table-data">627</div>
-				<div class="table-data">refund</div>
-				<div class="table-data">7/5/2021</div>
-				<div class="table-data">Credit</div>
-			</div>
-		</div>	
+	<table className='table'>
+    <thead className='table-header'>
+      <tr >
+        <th className='header__item'>Amount</th>
+        <th className='header__item'>Message</th>
+        <th className='header__item'>Date</th>
+        <th className='header__item'>Type</th>
+      </tr>
+    </thead>
+    <tbody className='table-content'>
+      {
+        transactionList.map(items=>(
+          <tr className='table-row' key={items.accountNumber}>
+            <td className='table-data'>{items.amount}</td>
+            <td className='table-data'>{items.message}</td>
+            <td className='table-data'>{items.date}</td>
+            <td className='table-data'>{items.type}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+
+  </table>
+
+
 	</div>
-</div>
 
 {/* table ends */}
     </div>

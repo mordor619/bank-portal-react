@@ -10,5 +10,4 @@ function LoginHeader() {
     )
 }
 
-
 export default LoginHeader;

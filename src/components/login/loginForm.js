@@ -3,6 +3,7 @@ import './style.css';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import {useForm} from 'react-hook-form'
+import Transaction from '../transaction/transaction';
 
 
 function LoginForm(props){
@@ -64,6 +65,8 @@ function LoginForm(props){
     }
 
     return(
+        
+        //  <Transaction accountNumber={props.accountNumber}/>
         <div className="form">
             <form onSubmit={handleSubmit(onSubmit)} method='get'> 
           <div className="form-body">
