@@ -35,31 +35,60 @@ h1,h2,h3,h4,h5,h6 {
 	border:1px solid $color-form-highlight;
 }
 
-.table-header {
-	display:flex;
-	width:100%;
+ .table-header {
+// 	display:flex;
+// 	width:100%;
 	background:#000;
-	padding:($half-spacing-unit * 1.5) 0;
-}
+// 	padding:($half-spacing-unit * 1.5) 0;
+ }
 
-.table-row {
-	display:flex;
-	width:100%;
-	padding:($half-spacing-unit * 1.5) 0;
+// .table-row {
+// 	display:flex;
+// 	width:100%;
+// 	padding:($half-spacing-unit * 1.5) 0;
 	
-	&:nth-of-type(odd) {
-		background:$color-form-highlight;
-	}
-}
+// 	&:nth-of-type(odd) {
+// 		background:$color-form-highlight;
+// 	}
+// }
 
-.table-data, .header__item {
+.table-data {
 	flex: 1 1 20%;
-	text-align:center;
+ 	text-align:center;
+	 color: black;
+	 background-color:white;
+
+
 }
 
-.header__item {
-	width: 10000px;
-	text-transform:uppercase;
+.pagination{
+    width: 55%;     
+    margin-left: 37%;
+    margin-bottom: 5%;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  span{
+    
+    display: flex;
+    padding: 0.5% 2%;
+    color: white;
+     justify-content: center;
+    margin-left: 2%;
+    border-radius: 20%;
+    
+     
+    background-image: linear-gradient(to right,#28517d,#1772FF);
+}
+
+span:hover{
+    box-shadow: 0 0 2px 2px rgb(214, 231, 244);
+}
+
+ .header__item {
+// 	width: 10000px;
+// 	text-transform:uppercase;
 	color: white;
 }
 

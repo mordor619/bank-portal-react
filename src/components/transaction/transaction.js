@@ -3,10 +3,18 @@ import NavbarLoggedIn from "../NavbarLoggedIn";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import './style.scss'
+import Moment from 'moment';
+
 
 function Transaction(props) {
 
+ 
   let navigate = useNavigate();
+
+//pagination
+  const[currentPage, setCurrentPage]=useState(1);
+  const[transactionPerPage, setTransactionPerPage]=useState(3);
+
 
 const [transactionList, setTransactionList] =useState([]);
   const [accountNumber, setAccountNumber] = useState(null);
@@ -14,8 +22,8 @@ const [transactionList, setTransactionList] =useState([]);
     const [message, setMessage] = useState(null);
     const [date, setDate] = useState(null);
     const [type, setType] = useState(null);
+    
 
- 
   const handleTransaction  = () => {
     
         //https://localhost:44340/api/Transaction/GetTransactionByAccno?Accno=0088824045
@@ -30,14 +38,32 @@ const [transactionList, setTransactionList] =useState([]);
             setTransactionList(result.data);
            
             }
+            
             )
 
-
+          
 }
 useEffect(()=>{
   handleTransaction();
 })
+
+const indexOfLastTransaction = currentPage * transactionPerPage;
+
+const indexOfFirstTransaction = indexOfLastTransaction - transactionPerPage;
+const currentTransaction = transactionList.slice(indexOfFirstTransaction,indexOfLastTransaction);
+const pageNumbers=[];
+
+for(let i=1;i<=Math.ceil(transactionList.length/transactionPerPage);i++){
+   pageNumbers.push(i);
+}
+const setPage=(pageNum)=>{
+    setCurrentPage(pageNum);
+}
+
+
   return (
+
+
     <div>
       <NavbarLoggedIn />
 
@@ -120,6 +146,7 @@ useEffect(()=>{
 	<table className='table'>
     <thead className='table-header'>
       <tr >
+        <th className='header__item'>Transaction ID</th>
         <th className='header__item'>Amount</th>
         <th className='header__item'>Message</th>
         <th className='header__item'>Date</th>
@@ -128,23 +155,36 @@ useEffect(()=>{
     </thead>
     <tbody className='table-content'>
       {
-        transactionList.map(items=>(
+        currentTransaction.map(items=>(
           <tr className='table-row' key={items.accountNumber}>
+            <td className='table-data'>{items.transactionId}</td>
             <td className='table-data'>{items.amount}</td>
             <td className='table-data'>{items.message}</td>
-            <td className='table-data'>{items.date}</td>
+            
+            <td className='table-data'>{Moment (items.date).utc().format('DD-MM-YYYY')}</td>
             <td className='table-data'>{items.type}</td>
           </tr>
-        ))
+        ))  
       }
     </tbody>
 
   </table>
-
+ 
 
 	</div>
 
 {/* table ends */}
+<div className="pagination">
+                     {
+                        pageNumbers.map((pageNum,index)=>(
+                          
+                            <span key={index}   onClick={()=>{
+                              setPage(pageNum)}}>
+                                {pageNum}
+                            </span>
+                        ))
+                     }
+                    </div>
     </div>
   );
 }
