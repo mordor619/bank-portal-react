@@ -6,19 +6,11 @@ $half-spacing-unit: $base-spacing-unit / 2;
 $color-alpha: #1772FF;
 $color-form-highlight: #EEEEEE;
 
-*, *:before, *:after {
+#transactionPageDiv, #transactionPageDiv:before, #transactionPageDiv:after {
 	box-sizing:border-box;
 }
 
-// body {
-// 	padding:$base-spacing-unit;
-// 	font-family:'Source Sans Pro', sans-serif;
-// 	margin:0;
-// }
 
-h1,h2,h3,h4,h5,h6 {
-	margin:0;
-}
 
 .container {
 	max-width: 1000px;
@@ -27,7 +19,7 @@ h1,h2,h3,h4,h5,h6 {
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	min-height:50vh;
+	min-height:auto;
 }
 
 .table {
@@ -36,59 +28,80 @@ h1,h2,h3,h4,h5,h6 {
 }
 
  .table-header {
-// 	display:flex;
-// 	width:100%;
 	background:#000;
-// 	padding:($half-spacing-unit * 1.5) 0;
  }
 
-// .table-row {
-// 	display:flex;
-// 	width:100%;
-// 	padding:($half-spacing-unit * 1.5) 0;
-	
-// 	&:nth-of-type(odd) {
-// 		background:$color-form-highlight;
-// 	}
-// }
 
 .table-data {
 	flex: 1 1 20%;
  	text-align:center;
 	 color: black;
 	 background-color:white;
-
-
 }
 
 .pagination{
     width: 55%;     
-    margin-left: 37%;
-    margin-bottom: 5%;
-    position: absolute;
-    bottom: 0px;
+    margin-left: 570px;
+    margin-bottom: 20px;
+    bottom: 20px;
   }
 
-  span{
-    
+  #spanPagination{
     display: flex;
     padding: 0.5% 2%;
     color: white;
      justify-content: center;
     margin-left: 2%;
     border-radius: 20%;
-    
-     
     background-image: linear-gradient(to right,#28517d,#1772FF);
 }
 
-span:hover{
+#spanPagination:hover{
     box-shadow: 0 0 2px 2px rgb(214, 231, 244);
 }
 
  .header__item {
-// 	width: 10000px;
-// 	text-transform:uppercase;
 	color: white;
 }
+
+// remove filter btn
+
+.removeFilter{
+	margin-right: 160px;
+}
+
+.btnRemFil {
+	appearance: none;
+	  -webkit-appearance: none;
+	font-family: sans-serif;
+	cursor: pointer;
+	min-width: 100px;
+	height: 40px;
+	border: 0px;
+	  -webkit-transition: background-color 100ms linear;
+	  -ms-transition: background-color 100ms linear;
+	   transition: background-color 100ms linear;
+  }
+  
+  .btnRemFil:focus:enabled, .btnRemFil.focus:enabled {
+	outline: 0;
+  }
+
+  .btnRemFil-round-2 {
+	border-radius: 20px;
+  }
+
+  .btnRemFil-warning:enabled {
+	font-weight: bold;
+	background: #f1c40f;
+	color: black;
+  }
+
+  .btnRemFil-warning:hover:enabled {
+	background: #f39c12;
+	color: black;
+  }
+
+  // remove filter btn ends
+  
 

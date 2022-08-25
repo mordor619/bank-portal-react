@@ -72,7 +72,7 @@ function Profile() {
 
                         <p className="lead">
                             <a className="btn btn-primary btn-lg mb-2" href="#" role="button">
-                                Learn more
+                                Give Feedback
                             </a>
                         </p>
                     </div>

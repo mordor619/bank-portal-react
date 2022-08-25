@@ -28,13 +28,14 @@ function FooterHome() {
                 </h5>
 
                 <p style={{ color: "white" }}>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti.
+                  Established in 2017, We are a mobile banking experience
+                  powered by the Gamma app.
                 </p>
 
                 <p style={{ color: "white" }}>
-                  Blanditiis praesentium voluptatum deleniti atque corrupti quos
-                  dolores et quas molestias.
+                  We give you the best rewards on purchases, reward you for
+                  deposits and have none of the most annoying fees charged
+                  by traditional banks.
                 </p>
 
                 <div style={{ marginBottom: "5px" }}>
