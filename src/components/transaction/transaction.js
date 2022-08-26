@@ -387,8 +387,8 @@ function Transaction(props) {
                     <td className="table-data">{items.amount}</td>
                     <td className="table-data">{items.message}</td>
 
-                    {/* <td className='table-data'>{Moment (items.date).utc().format('DD-MM-YYYY')}</td> */}
-                    <td className="table-data">{items.date}</td>
+                    <td className='table-data'>{Moment (items.date).utc().format('DD-MM-YYYY')}</td> 
+                    {/*<td className="table-data">{items.date}</td>*/}
                     <td className="table-data">{items.type}</td>
                   </tr>
                 ))}
