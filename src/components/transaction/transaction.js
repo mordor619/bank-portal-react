@@ -384,7 +384,7 @@ function Transaction(props) {
                 {currentTransaction.map((items) => (
                   <tr className="table-row" key={items.transactionId}>
                     <td className="table-data">{items.transactionId}</td>
-                    <td className="table-data">{items.amount}</td>
+                    <td className="table-data">&#8377; &nbsp;{items.amount}</td>
                     <td className="table-data">{items.message}</td>
 
                     <td className='table-data'>{Moment (items.date).utc().format('DD-MM-YYYY')}</td> 

@@ -1,4 +1,4 @@
-.container{
+.dashboardContainer{
     width: 100%;
     max-width: 1000px;
 	margin-right:auto;
@@ -9,7 +9,7 @@
 	min-height:auto;
 }
 
-.tablecontainer{
+.tableDashboardContainer{
   max-width: 1000px;
 	margin-right:auto;
 	margin-left:auto;
@@ -19,28 +19,35 @@
 	min-height:auto;
 }
 
-.table {
+.tableDashboard {
 	width:100%;
-	
+	height: 300px;
+  table-layout: fixed ;
 }
 
- .table-header {
+ .table-header-dashboard {
 	background:#000;
+  height: 60px;
  }
 
 
-.table-data {
+.table-data-dashboard {
 	flex: 1 1 20%;
  	text-align:center;
 	 color: black;
 	 background-color:white;
 }
 
-* {
+/* * {
     box-sizing: border-box;
   }
   
   body {
+    font-family: Arial, Helvetica, sans-serif;
+  } */
+
+  #dashboardDiv{
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
   }
   
@@ -65,12 +72,13 @@
   }
   
   /* Style the counter cards */
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  .cardDashboard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1.0); /* this adds the "card" effect */
     padding: 25px;
     text-align: center;
     background-color: #f1f1f1;
-    width:95%
+    width:95%;
+    border-radius: 5px;
   }
   
   /* Responsive columns - one column layout (vertical) on small screens */
@@ -81,3 +89,6 @@
       margin-bottom: 20px;
     }
   }
+
+
+  

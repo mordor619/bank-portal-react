@@ -25,6 +25,7 @@ $color-form-highlight: #EEEEEE;
 .table {
 	width:100%;
 	border:1px solid $color-form-highlight;
+	table-layout: fixed ;
 }
 
  .table-header {
