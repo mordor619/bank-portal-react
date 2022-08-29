@@ -15,6 +15,7 @@ import Transfer from "./components/transfer/transfer";
 import FixedDeposit from "./components/fixed-deposit/fixeddeposit";
 import About from "./components/about/about";
 import Contact from "./components/contact/contact";
+import UserFeedback from "./components/feedback/userfeedback";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -72,6 +73,8 @@ function App() {
           <Route path="/about" element={<About />} />
 
           <Route path="/contact" element={<Contact />} />
+
+          <Route path="/feedback" element={<UserFeedback />} />
         
         </Routes>
       )}

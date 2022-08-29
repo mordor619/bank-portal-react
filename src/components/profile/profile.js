@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavbarLoggedIn from '../NavbarLoggedIn';
 import "./style.css";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
 
@@ -11,6 +12,8 @@ function Profile() {
     const [address, setAddress] = useState('india')
     const [contact, setContact] = useState('1234567890')
     const [balance, setBalance] = useState(2000)
+
+    const navigate = useNavigate();
 
     const handleProfilePageData  = () => {
 
@@ -71,7 +74,7 @@ function Profile() {
                         <br></br>
 
                         <p className="lead">
-                            <a className="btn btn-primary btn-lg mb-2" href="#" role="button">
+                            <a onClick={() => navigate('/feedback')} className="btn btn-primary btn-lg mb-2" href="#" role="button">
                                 Give Feedback
                             </a>
                         </p>
